@@ -3,85 +3,92 @@
 
 using namespace std;
 
-template <typename T>
-class Sort {
+template<class T>
+class Sort
+{
+private:
+	static int Sift(const T* arr, int* id, int root, int bottom);
 public:
-	static void ShellSort(T* arr, int n);
-	static void PyramidSort(T* arr, int n);
-	static void CheckSort(T* arr);
+	static int ShellSort(const T* arr, int* id, int n);
+	static int PiramidSort(const T* arr, int* id, int n);
+	static bool IsSorted(const T* arr, int* id, int n);
+
 };
 
-template<typename T>
-inline void Sort<T>::ShellSort(T* arr, int n)
+template<class T>
+int Sort<T>::ShellSort(const T* arr, int* id, int n)
 {
-    int n = arr.size();
-
-    for (int step = n / 2; step > 0; step /= 2) {
-        int tmp;
-        for (int i = step; i < n; i++)
-        {
-            tmp = arr[i];
-            for (int j = i; j >= step; j -= step)
-            {
-                if (tmp < arr[j - step])
-                    arr[j] = arr[j - step];
-                else
-                    break;
-            }
-            arr[j] = tmp;
-        }
-    }  
+	int iter = 0;
+	for (int inter = n / 2; inter > 0; inter /= 2)
+	{
+		for (int i = inter; i < n; i++)
+		{
+			int temp = id[i];
+			int j;
+			for (j = i; j >= inter; j -= inter)
+			{
+				iter++;
+				if (arr[id[j - inter]] <= arr[temp])
+				{
+					break;
+				}
+				id[j] = id[j - inter];
+			}
+			id[j] = temp;
+		}
+	}
+	return iter;
 }
 
-template<typename T>
-inline void Sort<T>::PyramidSort(T* arr, int n)
+template<class T>
+int Sort<T>::PiramidSort(const T* arr, int* id, int n)
 {
-    int n = arr.size();
-
-    for (int i = n / 2 - 1; i >= 0; i--) {
-        heapify(arr, n, i);
-    }
-
-    for (int i = n - 1; i > 0; i--) {
-        std::swap(arr[0], arr[i]);
-        heapify(arr, i, 0);
-    }
+	int iter = 0;
+	for (int i = n / 2; i >= 0; i--)
+	{
+		iter += Sift(arr, id, i, n - 1);
+	}
+	for (int i = n - 1; i >= 1; i--)
+	{
+		int temp = id[0];
+		id[0] = id[i];
+		id[i] = temp;
+		iter += Sift(arr, id, 0, i - 1);
+	}
+	return iter;
 }
 
-template<typename T>
-inline void Sort<T>::CheckSort(T* arr)
+template<class T>
+bool Sort<T>::IsSorted(const T* arr, int* id, int n)
 {
+	for (int i = 0; i < n - 1; i++)
+	{
+
+		if (arr[id[i]] > arr[id[i + 1]]) return false;
+	}
+	return true;
 }
 
+template<class T>
+int Sort<T>::Sift(const T* arr, int* id, int root, int bottom)
+{
+	int maxChild, done = 0;
+	int iter = 0;
+	while ((root * 2 <= bottom) && !done)
+	{
+		if (root * 2 == bottom) maxChild = root * 2;
+		else if (arr[id[root * 2]] > arr[id[root * 2 + 1]]) maxChild = root * 2;
+		else maxChild = root * 2 + 1;
 
-void heapify(std::vector<int>& arr, int n, int i) {
-    int largest = i;
-    int left = 2 * i + 1;
-    int right = 2 * i + 2;
-
-    if (left < n && arr[left] > arr[largest]) {
-        largest = left;
-    }
-
-    if (right < n && arr[right] > arr[largest]) {
-        largest = right;
-    }
-
-    if (largest != i) {
-        std::swap(arr[i], arr[largest]);
-        heapify(arr, n, largest);
-    }
-}
-
-void heapSort(std::vector<int>& arr) {
-    int n = arr.size();
-
-    for (int i = n / 2 - 1; i >= 0; i--) {
-        heapify(arr, n, i);
-    }
-
-    for (int i = n - 1; i > 0; i--) {
-        std::swap(arr[0], arr[i]);
-        heapify(arr, i, 0);
-    }
+		if (arr[id[root]] < arr[id[maxChild]])
+		{
+			int temp = id[root];
+			id[root] = id[maxChild];
+			id[maxChild] = temp;
+			root = maxChild;
+			iter++;
+		}
+		else done = 1;
+	}
+	return iter;
 }
