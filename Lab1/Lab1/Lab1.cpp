@@ -94,7 +94,7 @@ int main()
 	{
 		id[i] = i;
 		arrRand[i] = rand() % 10;
-		//cout << arrRand[i] << " ";
+		cout << arrRand[i] << " ";
 	}
 	cout << endl;
 
@@ -104,7 +104,7 @@ int main()
 	{
 		for (int i = 0; i < n; i++)
 		{
-			//cout << arrRand[i] << " ";
+			cout << arrRand[i] << " ";
 		}
 		cout << endl;
 	}
@@ -121,7 +121,7 @@ int main()
 	{
 		for (int i = 0; i < n; i++)
 		{
-			//cout << arrRand[i] << " ";
+			cout << arrRand[id[i]] << " ";
 		}
 		cout << endl;
 	}
