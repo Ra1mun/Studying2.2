@@ -67,13 +67,21 @@ void Sort<T>::Shift(const T* arr, int* id, int root, int bottom)
 
 	while ((root * 2 <= bottom) && !done)
 	{
-		if ((root * 2 == bottom) || (*arr[id[root * 2]] > *arr[id[root * 2 + 1]]))
+		if (root * 2 == bottom)
+			maxChild = root * 2;
+		else if((*arr[id[root * 2]] > *arr[id[root * 2 + 1]]))
 			maxChild = root * 2;
 		else
 			maxChild = root * 2 + 1;
 
-		if (*arr[id[root]] < *arr[id[maxChild]] || (*arr[id[root]] == *arr[id[maxChild]] && root < maxChild))
+		if (*arr[id[root]] < *arr[id[maxChild]])
 		{
+			int temp = id[root];
+			id[root] = id[maxChild];
+			id[maxChild] = temp;
+			root = maxChild;
+		}
+		else if ((*arr[id[root]] == *arr[id[maxChild]] && root < maxChild)) {
 			int temp = id[root];
 			id[root] = id[maxChild];
 			id[maxChild] = temp;

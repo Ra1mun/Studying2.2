@@ -6,7 +6,7 @@ int main()
     setlocale(LC_ALL, "Russian");
     srand(time(nullptr));
 
-    const int n = 50;
+    const int n = 10;
 
     int* id = new int[n];
     User** users = new User*[n];

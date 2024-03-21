@@ -43,6 +43,8 @@ bool User::operator<(const User& object)
 			return false;
 		}
 	}
+
+	return false;
 }
 
 bool User::operator>(const User& object)
