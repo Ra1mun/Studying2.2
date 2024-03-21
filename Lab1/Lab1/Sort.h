@@ -68,13 +68,12 @@ int Sort<T>::PiramidSort(const T* arr, int* id, int n)
 template<class T>
 int Sort<T>::Shift(const T* arr, int* id, int root, int bottom)
 {
-	int maxChild, done = 0;
+	int maxChild;
+	bool done = false;
 	int iter = 0;
 	while ((root * 2 <= bottom) && !done)
 	{
-		if (root * 2 == bottom)
-			maxChild = root * 2;
-		else if (arr[id[root * 2]] > arr[id[root * 2 + 1]])
+		if ((root * 2 == bottom) || (arr[id[root * 2]] > arr[id[root * 2 + 1]]))
 			maxChild = root * 2;
 		else 
 			maxChild = root * 2 + 1;
@@ -87,7 +86,7 @@ int Sort<T>::Shift(const T* arr, int* id, int root, int bottom)
 			root = maxChild;
 			iter++;
 		}
-		else done = 1;
+		else done = true;
 	}
 	return iter;
 }
