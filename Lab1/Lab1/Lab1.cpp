@@ -3,6 +3,7 @@
 
 int main()
 {
+	setlocale(LC_ALL, "Russian");
 	srand(time(NULL));
 	int n = 10;
 
@@ -11,6 +12,7 @@ int main()
 	int* arrDown = new int[n];
 	int* id = new int[n];
 
+	Sort<int> s;
 
 	for (int i = 0; i < n; i++)
 	{
@@ -18,9 +20,8 @@ int main()
 		arrUp[i] = i;
 		//cout << arrUp[id[i]] << " ";
 	}
-	cout << endl;
+	cout << "Пирамидальная сортировка" << endl;
 
-	Sort<int> s;
 	int iter = s.PiramidSort(arrUp, id, n);
 	if (s.IsSorted(arrUp, id, n))
 	{
@@ -28,7 +29,7 @@ int main()
 		{
 			//cout << arrUp[id[i]] << " ";
 		}
-		cout << endl;
+		//cout << endl;
 	}
 	else iter = -1;
 	cout << "iter = " << iter << endl;
@@ -38,6 +39,8 @@ int main()
 		id[i] = i;
 	}
 
+	cout << "Сортировка Шелла" << endl;
+
 	iter = s.ShellSort(arrUp, id, n);
 	if (s.IsSorted(arrUp, id, n))
 	{
@@ -45,7 +48,7 @@ int main()
 		{
 			//cout << arrUp[id[i]] << " ";
 		}
-		cout << endl;
+		//cout << endl;
 	}
 	else iter = -1;
 	cout << "iter = " << iter << endl << endl;
@@ -57,7 +60,7 @@ int main()
 		arrDown[i] = n - i;
 		//cout << arrDown[id[i]] << " ";
 	}
-	cout << endl;
+	cout << "Пирамидальная сортировка" << endl;
 
 
 	iter = s.PiramidSort(arrDown, id, n);
@@ -67,7 +70,7 @@ int main()
 		{
 			//cout << arrDown[id[i]] << " ";
 		}
-		cout << endl;
+		//cout << endl;
 	}
 	else iter = -1;
 	cout << "iter = " << iter << endl;
@@ -77,6 +80,8 @@ int main()
 		id[i] = i;
 	}
 
+	cout << "Сортировка Шелла" << endl;
+
 	iter = s.ShellSort(arrDown, id, n);
 	if (s.IsSorted(arrDown, id, n))
 	{
@@ -84,7 +89,7 @@ int main()
 		{
 			//cout << arrDown[id[i]] << " ";
 		}
-		cout << endl;
+		//cout << endl;
 	}
 	else iter = -1;
 	cout << "iter = " << iter << endl << endl;
@@ -94,9 +99,9 @@ int main()
 	{
 		id[i] = i;
 		arrRand[i] = rand() % 10;
-		cout << arrRand[i] << " ";
+		//cout << arrRand[i] << " ";
 	}
-	cout << endl;
+	cout << "Пирамидальная сортировка" << endl;
 
 
 	iter = s.PiramidSort(arrRand, id, n);
@@ -104,9 +109,9 @@ int main()
 	{
 		for (int i = 0; i < n; i++)
 		{
-			cout << arrRand[i] << " ";
+			//cout << arrRand[i] << " ";
 		}
-		cout << endl;
+		//cout << endl;
 	}
 	else iter = -1;
 	cout << "iter = " << iter << endl;
@@ -116,14 +121,16 @@ int main()
 		id[i] = i;
 	}
 
+	cout << "Сортировка Шелла" << endl;
+
 	iter = s.ShellSort(arrRand, id, n);
 	if (s.IsSorted(arrRand, id, n))
 	{
 		for (int i = 0; i < n; i++)
 		{
-			cout << arrRand[id[i]] << " ";
+			//cout << arrRand[id[i]] << " ";
 		}
-		cout << endl;
+		//cout << endl;
 	}
 	else iter = -1;
 	cout << "iter = " << iter << endl;

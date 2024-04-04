@@ -7,7 +7,7 @@ template<class T>
 class Sort
 {
 private:
-	static int Shift(const T* arr, int* id, int root, int bottom);
+	static int Sift(const T* arr, int* id, int root, int bottom);
 public:
 	static int ShellSort(const T* arr, int* id, int n);
 	static int PiramidSort(const T* arr, int* id, int n);
@@ -52,21 +52,21 @@ int Sort<T>::PiramidSort(const T* arr, int* id, int n)
 	int iter = 0;
 	for (int i = n / 2; i >= 0; i--)
 	{
-		iter += Shift(arr, id, i, n - 1);
+		iter += Sift(arr, id, i, n - 1);
 	}
-	for (int i = n - 1; i >= 1; i--)
+	for (int i = n - 1; i > 0; i--)
 	{
 		int temp = id[0];
 		id[0] = id[i];
 		id[i] = temp;
-		iter += Shift(arr, id, 0, i - 1);
+		iter += Sift(arr, id, 0, i - 1);
 	}
 
 	return iter;
 }
 
 template<class T>
-int Sort<T>::Shift(const T* arr, int* id, int root, int bottom)
+int Sort<T>::Sift(const T* arr, int* id, int root, int bottom)
 {
 	int maxChild;
 	bool done = false;

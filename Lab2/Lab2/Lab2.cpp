@@ -21,9 +21,9 @@ int main()
 
     Sort<User*> s;
 
-    outputFile << "Сортировка Шелла" << endl;
     s.ShellSort(users, id, n);
     if (s.IsSorted(users, id, n) && outputFile.is_open()) {
+        outputFile << "Сортировка Шелла" << endl;
         for (int i = 0; i < n; i++) {
             outputFile << i + 1 << "место: " << *users[id[n - i - 1]] << "  " << id[n - i - 1];
             outputFile << endl;
@@ -36,9 +36,10 @@ int main()
         id[i] = i;
     }
 
-    outputFile << "Пирамидальная сортировка" << endl;
+    
     s.PiramidSort(users, id, n);
     if (s.IsSorted(users, id, n) && outputFile.is_open()) {
+        outputFile << "Пирамидальная сортировка" << endl;
         for (int i = 0; i < n; i++) {
             outputFile << i + 1 << "место: " << *users[id[n - i - 1]] << "  " << id[n - i - 1];
             outputFile << endl;
