@@ -12,12 +12,15 @@ private:
     vector<SList> table;
 
 public:
-    HashTable(int q) : q(q), table(q) {}
+    HashTable(int q) {
+        this->q = q;
+        table.resize(q);
+    }
 
     size_t hashFunction(const char* str) {
-        size_t hash = 0;
+        size_t hash = str[0];
         for (const char* p = str; *p != '\0'; ++p) {
-            hash = hash * 31 + *p;
+            hash = hash % table.size() * 31 + *p;
         }
         return hash % q;
     }
@@ -29,8 +32,21 @@ public:
 
     void concatenateAllLists() {
         SList mergedList;
-        for (SList& list : table) {
-            mergedList.Concatenate(list);
+        for (int i = 1; i < table.size(); i++) {
+            table[0].Concatenate(table[i]);
         }
+    }
+
+    int GetNumberOfUniqueElements() {
+        return table.size();
+    }
+
+    friend std::ostream& operator<<(std::ostream& stream, const HashTable& obj)
+    {
+        for (int i = 0; i < obj.q; i++) {
+            stream << obj.table[i] << "\n";
+        }
+
+        return stream;
     }
 };
