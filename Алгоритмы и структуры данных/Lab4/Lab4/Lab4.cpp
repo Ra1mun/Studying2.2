@@ -1,20 +1,93 @@
-﻿// Lab4.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿#include <iostream>
+#include <ctime>
+#include "Sort.h"
 
-#include <iostream>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+int greedy_alghorithm(int* values, int* weight, size_t size, int capacity) {
+    int* cost = new int[size];
+    int* id = new int[size];
+
+    for (int i = 0; i < size; i++) {
+        cost[i] = values[i] / weight[i];
+        id[i] = i;
+    }
+
+    Sort<int> sort;
+    sort.ShellSort(cost, id, size);
+
+    int result = 0;
+    for (int i = 0; i < size; i++) {
+        if (weight[id[i]] <= capacity) {
+            result += values[id[i]];
+            capacity -= weight[id[i]];
+        }
+    }
+
+    delete[] cost;
+    delete[] id;
+
+    return result;
 }
 
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
+int dynamic_alghorithm(int* values, int* weights, size_t size, int capacity) {
+    int** dp = new int* [size + 1];
 
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
+    for (int i = 0; i <= size; i++) {
+        dp[i] = new int[capacity + 1];
+    }
+
+    for (int i = 0; i <= size; i++) {
+        for (int j = 0; j <= capacity; j++) {
+            dp[i][j] = 0;
+        }
+    }
+
+    for (int i = 1; i <= size; ++i) {
+        for (int w = 1; w <= capacity; ++w) {
+            if (weights[i - 1] > w) {
+                dp[i][w] = dp[i - 1][w];
+            }
+            else {
+                dp[i][w] = max(dp[i - 1][w], dp[i - 1][w - weights[i - 1]] + values[i - 1]);
+            }
+        }
+    }
+
+    return dp[size][capacity];
+}
+
+int main() {
+    srand(time(nullptr));
+
+     int n = 10;
+
+     int* values = new int[n];
+     int* weights = new int[n];
+
+     int totalWeight = 0;
+
+     for (int i = 0; i < n; i++) {
+         values[i] = 1 + rand() % 20;
+         weights[i] = 1 + rand() % 20;
+         totalWeight += weights[i];
+     }
+
+     int W = totalWeight / 2;
+
+     //Жадный алгоритм
+     int max_value_greedy = greedy_alghorithm(values, weights, n, W);
+     cout << max_value_greedy << '\n';
+
+     //Динамический алгоритм
+     int max_value_dynamic = dynamic_alghorithm(values, weights, n, W);
+     cout << max_value_dynamic << '\n';
+
+
+     ////Жадный алгоритм
+     //int max_value_greedy = greedy_alghorithm(values, n, weights, n, W);
+     //cout << max_value_greedy << '\n';
+
+     delete[] values;
+     delete[] weights;
+}

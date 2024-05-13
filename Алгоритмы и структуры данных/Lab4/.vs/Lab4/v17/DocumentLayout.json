@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{9B322987-787E-4F41-B659-3869DB440E8E}|Lab4\\Lab4.vcxproj|D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab4\\Lab4\\Lab4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9B322987-787E-4F41-B659-3869DB440E8E}|Lab4\\Lab4.vcxproj|solutionrelative:Lab4\\Lab4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B322987-787E-4F41-B659-3869DB440E8E}|Lab4\\Lab4.vcxproj|D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab4\\Lab4\\Sort.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9B322987-787E-4F41-B659-3869DB440E8E}|Lab4\\Lab4.vcxproj|solutionrelative:Lab4\\Sort.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,17 +18,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Sort.h",
+              "DocumentMoniker": "D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab4\\Lab4\\Sort.h",
+              "RelativeDocumentMoniker": "Lab4\\Sort.h",
+              "ToolTip": "D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab4\\Lab4\\Sort.h",
+              "RelativeToolTip": "Lab4\\Sort.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-13T03:27:38.251Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Lab4.cpp",
               "DocumentMoniker": "D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab4\\Lab4\\Lab4.cpp",
               "RelativeDocumentMoniker": "Lab4\\Lab4.cpp",
-              "ToolTip": "D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab4\\Lab4\\Lab4.cpp*",
-              "RelativeToolTip": "Lab4\\Lab4.cpp*",
-              "ViewState": "AQIAACcAAAAAAAAAAAAAAEwAAAARAAAA",
+              "ToolTip": "D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab4\\Lab4\\Lab4.cpp",
+              "RelativeToolTip": "Lab4\\Lab4.cpp",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAswE4AAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-12T16:06:36.197Z",
               "EditorCaption": ""
