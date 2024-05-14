@@ -1,0 +1,9 @@
+﻿  Lab3.cpp
+D:\TSU\Studying2.2\Алгоритмы и структуры данных\Lab3\Lab3\SList.h(12,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  (компиляция исходного файла "Lab3.cpp")
+  
+D:\TSU\Studying2.2\Алгоритмы и структуры данных\Lab3\Lab3\HashTable.h(41,26): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
+  (компиляция исходного файла "Lab3.cpp")
+  
+D:\TSU\Studying2.2\Алгоритмы и структуры данных\Lab3\Lab3\Lab3.cpp(7,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Lab3.vcxproj -> D:\TSU\Studying2.2\Алгоритмы и структуры данных\Lab3\x64\Debug\Lab3.exe
