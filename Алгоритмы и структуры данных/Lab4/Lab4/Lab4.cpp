@@ -24,9 +24,6 @@ int greedy_alghorithm(int* values, int* weight, size_t size, int capacity) {
         }
     }
 
-    delete[] cost;
-    delete[] id;
-
     return result;
 }
 
@@ -60,17 +57,20 @@ int dynamic_alghorithm(int* values, int* weights, size_t size, int capacity) {
 void backtracking_alghorithm(int* values, int* weights, size_t size, int capacity,
     int currentWeight, int currentValue, int& maxValue, int index) {
 
-    if (index == size || currentWeight > capacity) {
+    if (index >= size || currentWeight > capacity) {
         maxValue = max(currentValue, maxValue);
         return;
     }
     
-    backtracking_alghorithm(values, weights, size, capacity, currentWeight + weights[index], currentValue, maxValue, index + 1, currentSubset);
+    backtracking_alghorithm(values, weights, size, capacity,
+        currentWeight + weights[index], currentValue + values[index], maxValue, index + 1);
 
-    backtracking_alghorithm(values, weights, size, capacity, currentWeight + weights[index], currentValue + values[index], maxValue, index + 1, currentSubset);
+    backtracking_alghorithm(values, weights, size, capacity,
+        currentWeight, currentValue, maxValue, index + 1);
 }
 
 int main() {
+    setlocale(LC_ALL, "Russian");
     srand(time(nullptr));
 
      int n = 10;
@@ -83,6 +83,8 @@ int main() {
      for (int i = 0; i < n; i++) {
          values[i] = 1 + rand() % 20;
          weights[i] = 1 + rand() % 20;
+         /*values[i] = 1;
+         weights[i] = 1;*/
          totalWeight += weights[i];
      }
 
@@ -90,20 +92,20 @@ int main() {
 
      //Жадный алгоритм
      int max_value_greedy = greedy_alghorithm(values, weights, n, W);
-     cout << max_value_greedy << '\n';
+     cout << "Жадный алгоритм: " << max_value_greedy << '\n';
 
      //Динамический алгоритм
      int max_value_dynamic = dynamic_alghorithm(values, weights, n, W);
-     cout << max_value_dynamic << '\n';
+     cout << "Динамический алгоритм: " << max_value_dynamic << '\n';
 
-     int* currentSubset = new int[n];
-     for (int i = 0; i < n; i++)
-         currentSubset[i] = 0;
+     //Бектрекинг
+     //int* currentSubset = new int[n];
+     //for (int i = 0; i < n; i++)
+     //    currentSubset[i] = 0;
 
      int max_value_backtrack = 0;
      backtracking_alghorithm(values, weights, n, W, 0, 0, max_value_backtrack, 0);
-     cout << max_value_backtrack << '\n';
-
+     cout << "Перебор: " << max_value_backtrack;
 
      delete[] values;
      delete[] weights;
