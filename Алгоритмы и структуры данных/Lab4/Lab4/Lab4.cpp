@@ -57,6 +57,19 @@ int dynamic_alghorithm(int* values, int* weights, size_t size, int capacity) {
     return dp[size][capacity];
 }
 
+void backtracking_alghorithm(int* values, int* weights, size_t size, int capacity,
+    int currentWeight, int currentValue, int& maxValue, int index) {
+
+    if (index == size || currentWeight > capacity) {
+        maxValue = max(currentValue, maxValue);
+        return;
+    }
+    
+    backtracking_alghorithm(values, weights, size, capacity, currentWeight + weights[index], currentValue, maxValue, index + 1, currentSubset);
+
+    backtracking_alghorithm(values, weights, size, capacity, currentWeight + weights[index], currentValue + values[index], maxValue, index + 1, currentSubset);
+}
+
 int main() {
     srand(time(nullptr));
 
@@ -83,10 +96,14 @@ int main() {
      int max_value_dynamic = dynamic_alghorithm(values, weights, n, W);
      cout << max_value_dynamic << '\n';
 
+     int* currentSubset = new int[n];
+     for (int i = 0; i < n; i++)
+         currentSubset[i] = 0;
 
-     ////Жадный алгоритм
-     //int max_value_greedy = greedy_alghorithm(values, n, weights, n, W);
-     //cout << max_value_greedy << '\n';
+     int max_value_backtrack = 0;
+     backtracking_alghorithm(values, weights, n, W, 0, 0, max_value_backtrack, 0);
+     cout << max_value_backtrack << '\n';
+
 
      delete[] values;
      delete[] weights;

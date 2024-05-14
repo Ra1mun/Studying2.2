@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\",
+  "WorkspaceRootPath": "C:\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{66CA8694-3D86-4ED5-8AFC-FA847E53B64C}|Lab3\\Lab3.vcxproj|D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\Lab3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{66CA8694-3D86-4ED5-8AFC-FA847E53B64C}|Lab3\\Lab3.vcxproj|C:\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\Lab3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{66CA8694-3D86-4ED5-8AFC-FA847E53B64C}|Lab3\\Lab3.vcxproj|solutionrelative:Lab3\\Lab3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66CA8694-3D86-4ED5-8AFC-FA847E53B64C}|Lab3\\Lab3.vcxproj|D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\SList.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{66CA8694-3D86-4ED5-8AFC-FA847E53B64C}|Lab3\\Lab3.vcxproj|solutionrelative:Lab3\\SList.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{66CA8694-3D86-4ED5-8AFC-FA847E53B64C}|Lab3\\Lab3.vcxproj|C:\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\HashTable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{66CA8694-3D86-4ED5-8AFC-FA847E53B64C}|Lab3\\Lab3.vcxproj|solutionrelative:Lab3\\HashTable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66CA8694-3D86-4ED5-8AFC-FA847E53B64C}|Lab3\\Lab3.vcxproj|D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\HashTable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{66CA8694-3D86-4ED5-8AFC-FA847E53B64C}|Lab3\\Lab3.vcxproj|solutionrelative:Lab3\\HashTable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{66CA8694-3D86-4ED5-8AFC-FA847E53B64C}|Lab3\\Lab3.vcxproj|C:\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\SList.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{66CA8694-3D86-4ED5-8AFC-FA847E53B64C}|Lab3\\Lab3.vcxproj|solutionrelative:Lab3\\SList.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "HashTable.h",
-              "DocumentMoniker": "D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\HashTable.h",
+              "DocumentMoniker": "C:\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\HashTable.h",
               "RelativeDocumentMoniker": "Lab3\\HashTable.h",
-              "ToolTip": "D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\HashTable.h",
+              "ToolTip": "C:\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\HashTable.h",
               "RelativeToolTip": "Lab3\\HashTable.h",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAHAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACUAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-07T12:33:32.175Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SList.h",
-              "DocumentMoniker": "D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\SList.h",
-              "RelativeDocumentMoniker": "Lab3\\SList.h",
-              "ToolTip": "D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\SList.h",
-              "RelativeToolTip": "Lab3\\SList.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-07T12:29:34.83Z",
+              "DocumentIndex": 0,
+              "Title": "Lab3.cpp",
+              "DocumentMoniker": "C:\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\Lab3.cpp",
+              "RelativeDocumentMoniker": "Lab3\\Lab3.cpp",
+              "ToolTip": "C:\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\Lab3.cpp",
+              "RelativeToolTip": "Lab3\\Lab3.cpp",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAABwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-07T12:28:59.811Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Lab3.cpp",
-              "DocumentMoniker": "D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\Lab3.cpp",
-              "RelativeDocumentMoniker": "Lab3\\Lab3.cpp",
-              "ToolTip": "D:\\TSU\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\Lab3.cpp",
-              "RelativeToolTip": "Lab3\\Lab3.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-07T12:28:59.811Z",
+              "DocumentIndex": 2,
+              "Title": "SList.h",
+              "DocumentMoniker": "C:\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\SList.h",
+              "RelativeDocumentMoniker": "Lab3\\SList.h",
+              "ToolTip": "C:\\Studying2.2\\\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445\\Lab3\\Lab3\\SList.h",
+              "RelativeToolTip": "Lab3\\SList.h",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-07T12:29:34.83Z",
               "EditorCaption": ""
             }
           ]

@@ -5,17 +5,35 @@ using namespace std;
 class SList {
 private:
 	vector<const char*> list;
+	int uniqueElements = 0;
 public:
 	SList() {};
 
-	void Add(const char* str) {
-		int len = strlen(str);
-		char* newStr = new char[len + 1];
-		for (int i = 0; i < len; i++) {
-			newStr[i] = str[i];
+	bool Contains(const char* obj) {
+		for (const char* str : list) {
+			if (strcmp(str, obj) == 0) {
+				return true;
+			}
 		}
-		newStr[len] = '\0';
-		list.push_back(newStr);
+
+		return false;
+	}
+
+	void Add(const char* str) {
+		if (!Contains(str)) {
+			int len = strlen(str);
+			char* newStr = new char[len + 1];
+			for (int i = 0; i < len; i++) {
+				newStr[i] = str[i];
+			}
+			newStr[len] = '\0';
+			list.push_back(newStr);
+			uniqueElements++;
+		}
+	}
+	
+	int GetUniqueElements() {
+		return uniqueElements;
 	}
 
 	void Concatenate(SList& otherList) {
