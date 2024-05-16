@@ -1,4 +1,4 @@
 ﻿  Lab5.cpp
-D:\TSU\Studying2.2\Алгоритмы и структуры данных\Lab5\Lab5\Lab5.cpp(72,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-D:\TSU\Studying2.2\Алгоритмы и структуры данных\Lab5\Lab5\Lab5.cpp(152,20): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-  Lab5.vcxproj -> D:\TSU\Studying2.2\Алгоритмы и структуры данных\Lab5\x64\Debug\Lab5.exe
+C:\Studying2.2\Алгоритмы и структуры данных\Lab5\Lab5\Lab5.cpp(71,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Studying2.2\Алгоритмы и структуры данных\Lab5\Lab5\Lab5.cpp(151,20): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  Lab5.vcxproj -> C:\Studying2.2\Алгоритмы и структуры данных\Lab5\x64\Debug\Lab5.exe

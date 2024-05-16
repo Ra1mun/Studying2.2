@@ -5,6 +5,25 @@
 #include "Sort.h"
 #include "Graph.h"
 
+double distance(Point p1, Point p2)
+{
+    return sqrt(pow(p2.x - p1.x, 2) + pow(p2.y - p1.y, 2));
+}
+
+double minWeight(double* weights, int& minIndex, size_t size) {
+    using namespace std;
+    double result = DBL_MAX;
+    for (int i = 0; i < size; i++) {
+        if (weights[i] < result) {
+            result = weights[i];
+            minIndex = i;
+        }
+
+    }
+
+    return result;
+}
+
 Point calculateMaxCoordinats(const Point* points, size_t size) {
     int maxX = INT16_MIN;
     int maxY = INT16_MIN;
@@ -39,30 +58,10 @@ Point calculateCentroid(const Point* points, int size) {
         totalSumX += points[i].x;
         totalSumY += points[i].y;
     }
-    cout << '\n' << totalSumX << ';' << totalSumY << '\n';
     int centroidX = totalSumX / size;
     int centroidY = totalSumY / size;
 
     return Point(centroidX, centroidY);
-}
-
-double distance(Point p1, Point p2)
-{
-    return sqrt(pow(p2.x - p1.x, 2) + pow(p2.y - p1.y, 2));
-}
-
-double minWeight(double* weights, int& minIndex, size_t size) {
-    using namespace std;
-    double result = DBL_MAX;
-    for (int i = 0; i < size; i++) {
-        if (weights[i] < result) {
-            result = weights[i];
-            minIndex = i;
-        }
-
-    }
-
-    return result;
 }
 
 int main()
@@ -71,8 +70,8 @@ int main()
 
     srand(time(nullptr));
 
-    int N = 50;
-    int K = 2;
+    int N = 8;
+    int K = 5;
     int minPosition = -40, maxPosition = 40;
 
 
@@ -88,10 +87,10 @@ int main()
     //считая данные точки вершинами полного взвешенного графа (веса – расстояния между парами точек),
     //выделить ребра минимального остова
     double* minLengths = new double[N - 1];
-    int** indexMinPoints = new int* [N - 1];
+    int** indexMinConnectedPoints = new int* [N - 1];
     for (int i = 0; i < N - 1; i++) {
-        indexMinPoints[i] = new int[2];
-        indexMinPoints[i][0] = i;
+        indexMinConnectedPoints[i] = new int[2];
+        indexMinConnectedPoints[i][0] = i;
     }
 
     for (int currentPoint = 0; currentPoint < N - 1; currentPoint++) {
@@ -104,7 +103,7 @@ int main()
 
         int index;
         minLengths[currentPoint] = minWeight(weights, index, N - currentPoint - 1);
-        indexMinPoints[currentPoint][1] = currentPoint + index + 1;
+        indexMinConnectedPoints[currentPoint][1] = currentPoint + index + 1;
 
         delete[] weights;
     }
@@ -134,8 +133,8 @@ int main()
 
     //построение матрицы смежности
     for (int i = 0; i < N - K; i++) {
-        int x = indexMinPoints[id[i]][0];
-        int y = indexMinPoints[id[i]][1];
+        int x = indexMinConnectedPoints[id[i]][0];
+        int y = indexMinConnectedPoints[id[i]][1];
 
         adjacencyMatrix[x][y] = 1;
         adjacencyMatrix[y][x] = 1;
@@ -161,14 +160,14 @@ int main()
     }
 
     for (int i = 0; i < N - 1; i++) {
-        delete[] indexMinPoints[i];
+        delete[] indexMinConnectedPoints[i];
     }
 
     for (int i = 0; i < N; i++) {
         delete[] adjacencyMatrix[i];
     }
 
-    delete[] indexMinPoints;
+    delete[] indexMinConnectedPoints;
     delete[] adjacencyMatrix;
     delete[] points;
     delete[] minLengths;
