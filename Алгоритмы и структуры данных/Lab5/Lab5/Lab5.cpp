@@ -140,6 +140,13 @@ int main()
         adjacencyMatrix[y][x] = 1;
     }
 
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << adjacencyMatrix[i][j] << ' ';
+        }
+        cout << '\n';
+    }
+
     //нахождение компонентов связанности
     Graph extension;
     vector<vector<int>> connectedComponents = extension.findConnectedComponents(adjacencyMatrix, N);
@@ -152,6 +159,7 @@ int main()
         Point* connectedPoints = new Point[length];
         for (int j = 0; j < length; j++) {
             connectedPoints[j] = points[connectedComponents[i][j]];
+           
         }
 
         cout << "Min Coordinates: " << calculateMinCoordinats(connectedPoints, length);

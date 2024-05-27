@@ -24,6 +24,9 @@ int greedy_alghorithm(int* values, int* weight, size_t size, int capacity) {
         }
     }
 
+    delete[] cost;
+    delete[] id;
+
     return result;
 }
 
