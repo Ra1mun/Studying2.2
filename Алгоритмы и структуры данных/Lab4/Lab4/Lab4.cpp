@@ -24,6 +24,9 @@ int greedy_alghorithm(int* values, int* weight, size_t size, int capacity) {
         }
     }
 
+    delete[] cost;
+    delete[] id;
+
     return result;
 }
 
@@ -50,6 +53,12 @@ int dynamic_alghorithm(int* values, int* weights, size_t size, int capacity) {
             }
         }
     }
+    /*for (int i = 0; i <= size; i++) {
+        for (int j = 0; j <= capacity; j++) {
+            cout << dp[i][j] << ' ';
+        }
+        cout << '\n';
+    }*/
 
     return dp[size][capacity];
 }
@@ -73,7 +82,7 @@ int main() {
     setlocale(LC_ALL, "Russian");
     srand(time(nullptr));
 
-     int n = 10;
+     int n = 5;
 
      int* values = new int[n];
      int* weights = new int[n];
@@ -97,11 +106,6 @@ int main() {
      //Динамический алгоритм
      int max_value_dynamic = dynamic_alghorithm(values, weights, n, W);
      cout << "Динамический алгоритм: " << max_value_dynamic << '\n';
-
-     //Бектрекинг
-     //int* currentSubset = new int[n];
-     //for (int i = 0; i < n; i++)
-     //    currentSubset[i] = 0;
 
      int max_value_backtrack = 0;
      backtracking_alghorithm(values, weights, n, W, 0, 0, max_value_backtrack, 0);
