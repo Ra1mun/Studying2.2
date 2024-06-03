@@ -1,0 +1,3 @@
+﻿  lab8.cpp
+D:\TSU\Studying2.2\Параллельное программирование\lab8\lab8\lab8.cpp(6,15): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  lab8.vcxproj -> D:\TSU\Studying2.2\Параллельное программирование\lab8\x64\Debug\lab8.exe
