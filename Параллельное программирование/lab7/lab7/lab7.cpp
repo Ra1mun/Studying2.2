@@ -3,9 +3,10 @@
 #include <cmath>
 #include <omp.h>
 #include <random>
+#include <ctime>
 
 #define N 1000
-#define SIZE 2
+#define SIZE 12
 
 void fillMatrix(double** A, int size) {
     using namespace std;
@@ -39,46 +40,52 @@ int main()
     for (int i = 0; i < N; i++) {
         C[i] = new double[N];
         for (int j = 0; j < N; j++) {
-            C[i][j] = 0;
+            C[i][j] = 0.0;
         }
     }
 
     // Инициализация матриц A и B
     fillMatrix(A, N);
     fillMatrix(B, N);
+    for (int chunk = 1; chunk < 256; chunk *= 2) {
+            clock_t start_time = clock();
+    #pragma omp parallel for shared(A, B, C) collapse(3) schedule(static, chunk)
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++) {
+                    for (int k = 0; k < N; k++) {
+                        C[i][j] += A[i][k] * B[k][j];
+                    }
+                }
+            }
 
-    // Вариант циклов i-j-k
-    double start_time = omp_get_wtime();
-#pragma omp parallel for shared(A, B, C) collapse(3) schedule(static)
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
+            if (omp_get_thread_num() == 0) {
+                std::cout << chunk << '\n';
+                std::cout << "Time for i-j-k loop: " << (double)(clock() - start_time) << '\n';
+            }
+
+            // Обнуление матрицы C для следующего варианта циклов
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++) {
+                    C[i][j] = 0.0;
+                }
+            }
+
+            // Вариант циклов k-i-j
+            start_time = clock();
+    #pragma omp parallel for shared(A, B, C) collapse(3) schedule(static, chunk)
             for (int k = 0; k < N; k++) {
-                C[i][j] += A[i][k] * B[k][j];
+                for (int i = 0; i < N; i++) {
+                    for (int j = 0; j < N; j++) {
+                        C[i][j] += A[i][k] * B[k][j];
+                    }
+                }
             }
-        }
+            // Вариант циклов i-j-k
+            if (omp_get_thread_num() == 0) {
+                std::cout << chunk << '\n';
+                std::cout << "Time for k-i-j loop: " << (double)(clock() - start_time) << '\n';
+            }      
     }
-    double end_time = omp_get_wtime();
-    std::cout << "Time for i-j-k loop: " << end_time - start_time << " seconds" << std::endl;
-
-    // Обнуление матрицы C для следующего варианта циклов
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            C[i][j] = 0.0;
-        }
-    }
-
-    // Вариант циклов k-i-j
-    start_time = omp_get_wtime();
-#pragma omp parallel for shared(A, B, C) collapse(3) schedule(static)
-    for (int k = 0; k < N; k++) {
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                C[i][j] += A[i][k] * B[k][j];
-            }
-        }
-    }
-    end_time = omp_get_wtime();
-    std::cout << "Time for k-i-j loop: " << end_time - start_time << " seconds" << std::endl;
 
     return 0;
 }

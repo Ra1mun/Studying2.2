@@ -1,7 +1,8 @@
 ﻿#include <iostream>
 #include <omp.h>
+#include <cmath>
 
-#define SIZE 12
+#define SIZE 32
 
 int const n = 10e8;
 
@@ -35,7 +36,7 @@ int main()
 #pragma omp parallel
     {
 #pragma omp for reduction(+ : integral)
-        for (int step = 0; step < n / SIZE; step++) {
+        for (int step = 0; step < n; step++) {
             double x1 = a + step * h;
             double x2 = a + (step + 1) * h;
             integral += (x2 - x1) / 6.0 * (f(x1) + 4.0 * f(0.5 * (x1 + x2)) + f(x2));
