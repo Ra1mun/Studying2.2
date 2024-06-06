@@ -1,0 +1,4 @@
+﻿  lab7.cpp
+D:\TSU\Studying2.2\Параллельное программирование\lab7\lab7\lab7.cpp(52,17): warning C4849: Предложение "collapse" OpenMP игнорируется в директиве "parallel for".
+D:\TSU\Studying2.2\Параллельное программирование\lab7\lab7\lab7.cpp(75,17): warning C4849: Предложение "collapse" OpenMP игнорируется в директиве "parallel for".
+  lab7.vcxproj -> D:\TSU\Studying2.2\Параллельное программирование\lab7\x64\Debug\lab7.exe
